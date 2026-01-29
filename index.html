@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Portfolio | Forest Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/anime-ace" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="day-mode">
+    <!-- Background Elements -->
+    <div class="bg-layer forest-bg"></div>
+    <div class="bg-layer overlay-texture"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-leaves" id="floating-leaves"></div>
+    <div class="fireflies" id="fireflies"></div>
+    
+    <!-- Sound Controls -->
+    <div class="sound-controls">
+        <button id="ambient-toggle" class="sound-btn active" title="Toggle Forest Sounds">
+            <i class="fas fa-forest"></i>
+            <span class="sound-status">ON</span>
+        </button>
+        <button id="sfx-toggle" class="sound-btn active" title="Toggle Sound Effects">
+            <i class="fas fa-volume-up"></i>
+            <span class="sound-status">ON</span>
+        </button>
+        <div class="volume-slider-container">
+            <input type="range" id="volume-slider" min="0" max="100" value="50" title="Volume Control">
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header / Navigation -->
+        <header class="anime-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h1 class="logo-text">Forest<span>Portfolio</span></h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-item active" data-page="home">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                        <div class="nav-indicator"></div>
+                    </a></li>
+                    <li><a href="#works" class="nav-item" data-page="works">
+                        <i class="fas fa-palette"></i>
+                        <span>Works</span>
+                        <div class="nav-indicator"></div>
+                    </a></li>
+                    <li><a href="#about" class="nav-item" data-page="about">
+                        <i class="fas fa-user-ninja"></i>
+                        <span>About</span>
+                        <div class="nav-indicator"></div>
+                    </a></li>
+                    <li><a href="#contact" class="nav-item" data-page="contact">
+                        <i class="fas fa-scroll"></i>
+                        <span>Contact</span>
+                        <div class="nav-indicator"></div>
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="theme-toggle">
+                <button id="theme-btn" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                    <span class="theme-text">Night</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Pages -->
+        <main class="page-content">
+            <!-- Home Page -->
+            <section id="home" class="page active">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <div class="title-container">
+                            <h2 class="greeting">Konnichiwa, Watashi wa</h2>
+                            <h1 class="main-title">
+                                <span class="name-text" id="typed-name"></span>
+                                <span class="cursor">|</span>
+                            </h1>
+                            <p class="tagline">Anime Artist & Digital Creator<br>from the Digital Forest</p>
+                        </div>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-card">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Years</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Passion</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-actions">
+                            <button class="btn-primary" id="explore-btn">
+                                <i class="fas fa-compass"></i>
+                                Explore My World
+                            </button>
+                            <button class="btn-secondary" id="play-music">
+                                <i class="fas fa-music"></i>
+                                Play Forest Melody
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="character-frame">
+                            <div class="character-image">
+                                <!-- Placeholder for character image -->
+                                <div class="placeholder-char">
+                                    <i class="fas fa-user-ninja"></i>
+                                </div>
+                            </div>
+                            <div class="frame-decoration"></div>
+                        </div>
+                        <div class="floating-icons">
+                            <div class="icon-float"><i class="fas fa-paint-brush"></i></div>
+                            <div class="icon-float"><i class="fas fa-code"></i></div>
+                            <div class="icon-float"><i class="fas fa-gamepad"></i></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scroll-prompt">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <p>Scroll to discover</p>
+                </div>
+            </section>
+
+            <!-- Works Page -->
+            <section id="works" class="page">
+                <div class="page-header">
+                    <h2 class="page-title">My Creations</h2>
+                    <p class="page-subtitle">Gallery of digital art & projects</p>
+                </div>
+                
+                <div class="category-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="art">Digital Art</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="game">Game Assets</button>
+                    <button class="filter-btn" data-filter="ui">UI/UX</button>
+                </div>
+                
+                <div class="portfolio-grid" id="portfolio-grid">
+                    <!-- Projects loaded via JavaScript -->
+                </div>
+            </section>
+
+            <!-- About Page -->
+            <section id="about" class="page">
+                <div class="about-container">
+                    <div class="about-visual">
+                        <div class="about-character">
+                            <div class="char-main"></div>
+                            <div class="char-details">
+                                <div class="detail-item"><i class="fas fa-heart"></i> Anime</div>
+                                <div class="detail-item"><i class="fas fa-mug-hot"></i> Coffee</div>
+                                <div class="detail-item"><i class="fas fa-headphones"></i> Lo-fi</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-content">
+                        <h2 class="page-title">My Journey</h2>
+                        
+                        <div class="bio-text">
+                            <p>Hello! I'm a digital creator who finds inspiration in the serene beauty of forests and the vibrant energy of anime worlds. My journey began 5 years ago when I first combined my love for animation with web technology.</p>
+                            <p>I believe in creating digital experiences that feel alive, immersive, and tell a story—just like your favorite anime series.</p>
+                        </div>
+                        
+                        <div class="skills-section">
+                            <h3>Character Stats</h3>
+                            <div class="skill-bars" id="skill-bars">
+                                <!-- Skills loaded via JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="tools-section">
+                            <h3>Weapons of Choice</h3>
+                            <div class="tools-grid">
+                                <div class="tool-item"><i class="fab fa-figma"></i> Figma</div>
+                                <div class="tool-item"><i class="fas fa-pen-nib"></i> Clip Studio</div>
+                                <div class="tool-item"><i class="fab fa-js"></i> JavaScript</div>
+                                <div class="tool-item"><i class="fas fa-cube"></i> Blender</div>
+                                <div class="tool-item"><i class="fab fa-react"></i> React</div>
+                                <div class="tool-item"><i class="fas fa-wave-square"></i> After Effects</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Page -->
+            <section id="contact" class="page">
+                <div class="contact-container">
+                    <div class="contact-form-section">
+                        <h2 class="page-title">Send a Message</h2>
+                        <p class="page-subtitle">Like sending a letter in an anime world</p>
+                        
+                        <form id="message-form" class="anime-form">
+                            <div class="form-group">
+                                <label for="sender-name">
+                                    <i class="fas fa-user"></i> Your Name
+                                </label>
+                                <input type="text" id="sender-name" placeholder="Enter your name..." required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sender-email">
+                                    <i class="fas fa-envelope"></i> Email Address
+                                </label>
+                                <input type="email" id="sender-email" placeholder="your.email@example.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message-subject">
+                                    <i class="fas fa-tag"></i> Subject
+                                </label>
+                                <input type="text" id="message-subject" placeholder="What is this about?">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message-content">
+                                    <i class="fas fa-scroll"></i> Your Message
+                                </label>
+                                <textarea id="message-content" rows="5" placeholder="Write your message here..."></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                                <button type="button" id="clear-form" class="btn-secondary">
+                                    <i class="fas fa-broom"></i>
+                                    Clear
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info-section">
+                        <div class="contact-card">
+                            <h3><i class="fas fa-map-marker-alt"></i> Find Me In</h3>
+                            <div class="location-display">
+                                <div class="map-placeholder">
+                                    <i class="fas fa-tree"></i>
+                                    <i class="fas fa-mountain"></i>
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <p>The Digital Forest, Anime Realm</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <h3><i class="fas fa-share-alt"></i> Social Links</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link twitter">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </a>
+                                <a href="#" class="social-link instagram">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="#" class="social-link artstation">
+                                    <i class="fab fa-artstation"></i> ArtStation
+                                </a>
+                                <a href="#" class="social-link github">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <h3><i class="fas fa-clock"></i> Response Time</h3>
+                            <div class="response-info">
+                                <div class="response-time">
+                                    <i class="fas fa-hourglass-half"></i>
+                                    <span>Usually within 24 hours</span>
+                                </div>
+                                <p>I check messages daily at the sakura viewing spot</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="anime-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Forest Portfolio</span>
+                </div>
+                <p class="footer-text">© <span id="current-year"></span> Created with ❤️ and anime magic</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a> •
+                    <a href="#privacy">Privacy</a> •
+                    <a href="#credits">Credits</a> •
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Audio Elements (Hidden) -->
+    <audio id="ambient-sound" loop>
+        <source src="assets/sounds/forest-ambient.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <audio id="hover-sound">
+        <source src="assets/sounds/wind-chime.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="click-sound">
+        <source src="assets/sounds/page-transition.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JavaScript Files -->
+    <script src="data.js"></script>
+    <script src="sound-manager.js"></script>
+    <script src="main.js"></script>
+</body>
+  </html>

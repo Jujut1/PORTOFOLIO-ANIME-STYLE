@@ -1,0 +1,247 @@
+/* RESPONSIVE STYLES */
+@media (max-width: 1200px) {
+    .hero-section {
+        gap: 30px;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .character-frame {
+        width: 300px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+    
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form-section {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .anime-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    
+    .main-nav .nav-list {
+        gap: 10px;
+    }
+    
+    .nav-item {
+        min-width: 70px;
+        padding: 8px 10px;
+    }
+    
+    .nav-item span {
+        font-size: 0.8rem;
+    }
+    
+    .sound-controls {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 15px;
+        min-width: 80px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .character-frame {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .main-nav .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .stat-card {
+        width: 150px;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-filters {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .char-details {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .anime-form {
+        padding: 25px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        margin-bottom: 30px;
+    }
+    
+    .character-frame {
+        width: 200px;
+        height: 280px;
+    }
+    
+    .scroll-prompt {
+        display: none;
+    }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-day: #3A7B6C;
+        --bg-day: #1A1A2E;
+        --text-day: #E6E6E6;
+        --card-bg-day: rgba(40, 40, 60, 0.85);
+    }
+}
+
+/* Print styles */
+@media print {
+    .sound-controls,
+    .theme-toggle,
+    .scroll-prompt,
+    .hero-actions,
+    .form-actions,
+    .footer-links,
+    .floating-leaves,
+    .fireflies {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .page {
+        display: block !important;
+        opacity: 1 !important;
+        transform: none !important;
+        page-break-after: always;
+    }
+    
+    .page:last-child {
+        page-break-after: auto;
+    }
+  }
